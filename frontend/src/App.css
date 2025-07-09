@@ -1,0 +1,206 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+:root {
+  --radius: 0.5rem;
+  
+  /* Tema escuro com detalhes roxos - Orbisx */
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #1a1a1a;
+  --card-foreground: #ffffff;
+  --popover: #1a1a1a;
+  --popover-foreground: #ffffff;
+  --primary: #7C3AED;
+  --primary-foreground: #ffffff;
+  --secondary: #2a2a2a;
+  --secondary-foreground: #ffffff;
+  --muted: #2a2a2a;
+  --muted-foreground: #a1a1aa;
+  --accent: #7C3AED;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --border: #3a3a3a;
+  --input: #2a2a2a;
+  --ring: #7C3AED;
+  --chart-1: #7C3AED;
+  --chart-2: #10b981;
+  --chart-3: #f59e0b;
+  --chart-4: #ef4444;
+  --chart-5: #06b6d4;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Componentes customizados para o Orbisx */
+  .orbisx-card {
+    @apply bg-card border border-border rounded-lg p-6 shadow-lg;
+  }
+  
+  .orbisx-button {
+    @apply bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium transition-all duration-200 hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring;
+  }
+  
+  .orbisx-input {
+    @apply bg-input border border-border rounded-md px-3 py-2 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring;
+  }
+  
+  .orbisx-sidebar {
+    @apply bg-card border-r border-border h-screen w-64 fixed left-0 top-0 z-40;
+  }
+  
+  .orbisx-main {
+    @apply ml-64 min-h-screen bg-background;
+  }
+  
+  .orbisx-header {
+    @apply border-b border-border bg-card/50 backdrop-blur-sm;
+  }
+  
+  .orbisx-modal {
+    @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm;
+  }
+  
+  .orbisx-modal-content {
+    @apply bg-card border border-border rounded-lg p-6 max-w-md w-full mx-4 shadow-xl;
+  }
+  
+  .orbisx-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .orbisx-badge-success {
+    @apply bg-green-500/20 text-green-400 border border-green-500/30;
+  }
+  
+  .orbisx-badge-warning {
+    @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30;
+  }
+  
+  .orbisx-badge-error {
+    @apply bg-red-500/20 text-red-400 border border-red-500/30;
+  }
+  
+  .orbisx-badge-info {
+    @apply bg-blue-500/20 text-blue-400 border border-blue-500/30;
+  }
+  
+  .orbisx-table {
+    @apply w-full border-collapse;
+  }
+  
+  .orbisx-table th {
+    @apply border-b border-border px-4 py-3 text-left text-sm font-medium text-muted-foreground;
+  }
+  
+  .orbisx-table td {
+    @apply border-b border-border px-4 py-3 text-sm;
+  }
+  
+  .orbisx-table tr:hover {
+    @apply bg-muted/50;
+  }
+  
+  /* Animações */
+  .orbisx-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .orbisx-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  .orbisx-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  .orbisx-glow {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+  }
+  
+  .orbisx-glow:focus {
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .orbisx-sidebar {
+    @apply transform -translate-x-full transition-transform duration-300;
+  }
+  
+  .orbisx-sidebar.open {
+    @apply translate-x-0;
+  }
+  
+  .orbisx-main {
+    @apply ml-0;
+  }
+  
+  .orbisx-modal-content {
+    @apply max-w-sm;
+  }
+}
+
