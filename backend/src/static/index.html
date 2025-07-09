@@ -10,14 +10,22 @@
   </head>
   <body>
     <!-- Navbar para MOBILE -->
-<nav class="lg:hidden bg-purple-700 text-white px-4 py-2 flex justify-around items-center text-sm font-medium fixed top-0 left-0 right-0 z-50 shadow-md">
-  <a href="/dashboard" class="hover:underline">DASHBOARD</a>
-  <a href="/contratos" class="hover:underline">CONTRATOS</a>
-  <a href="/orcamentos" class="hover:underline">ORÇAMENTOS</a>
-  <a href="/agenda" class="hover:underline">AGENDA</a>
+<nav class="lg:hidden bg-purple-700 text-white px-4 py-3 flex justify-between items-center text-sm font-medium fixed top-0 left-0 right-0 z-50 shadow-md space-x-2 overflow-x-auto whitespace-nowrap">
+  <button onclick="navigateTo('dashboard')" class="hover:underline">DASHBOARD</button>
+  <button onclick="navigateTo('contratos')" class="hover:underline">CONTRATOS</button>
+  <button onclick="navigateTo('orcamentos')" class="hover:underline">ORÇAMENTOS</button>
+  <button onclick="navigateTo('agenda')" class="hover:underline">AGENDA</button>
 </nav>
+
+
+
     <div id="root"></div>
 
-
+<script>
+  function navigateTo(path) {
+    window.history.pushState({}, '', '/' + path);
+    window.dispatchEvent(new PopStateEvent('popstate'));
+  }
+</script>
   </body>
 </html>
