@@ -247,10 +247,9 @@ Error generating stack: `+ l.message + `
   const [M, H] = J.useState(!1), Z = [{ id: "dashboard", label: "Dashboard", icon: fs, description: "Visão geral das finanças" }, { id: "orcamentos", label: "Orçamentos", icon: Gu, description: "Propostas e orçamentos" }, { id: "contratos", label: "Contratos", icon: Dh, description: "Gestão de contratos" }, { id: "agenda", label: "Agenda", icon: Yu, description: "Tarefas e compromissos" }], ee = A => { G(A), m && H(!1) }, O = () => { q(), m && H(!1) }, b = () => { H(!M) }; return c.jsxs(c.Fragment, {
     children: [m && c.jsx("button", { onClick: b, className: "fixed top-4 left-4 z-50 bg-purple-600 text-white p-2 rounded-lg shadow-lg lg:hidden", children: M ? c.jsx(ql, { className: "w-6 h-6" }) : c.jsx(Gh, { className: "w-6 h-6" }) }), m && M && c.jsx("div", { className: "fixed inset-0 bg-black/50 z-40 lg:hidden", onClick: () => H(!1) }), c.jsx("div", {
       className:
-  orbisx-sidebar transition-transform duration-300 z-40 translate-x-0 lg:translate-x-0
+  "orbisx-sidebar transition-transform duration-300 z-40 " + 
+  `${m ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`
 
-
-        lg:translate-x-0
       `, children: c.jsxs("div", {
         className: "flex flex-col h-full", children: [c.jsx("div", { className: "p-6 border-b border-border", children: c.jsxs("div", { className: "flex items-center space-x-3", children: [c.jsx("div", { className: "w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center", children: c.jsx("span", { className: "text-white font-bold text-lg", children: "O" }) }), c.jsxs("div", { children: [c.jsx("h1", { className: "text-xl font-bold text-white", children: "Orbisx" }), c.jsx("p", { className: "text-sm text-gray-400", children: "Sistema de Gestão" })] })] }) }), c.jsx("nav", {
           className: "flex-1 p-4", children: c.jsx("ul", {
