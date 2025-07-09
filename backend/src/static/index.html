@@ -10,5 +10,29 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menu = document.querySelector('.orbisx-sidebar');
+    const botaoMenu = document.querySelector('button.fixed.lg\\:hidden');
+    const overlay = document.createElement('div');
+
+    overlay.className = 'fixed inset-0 bg-black/50 z-40 lg:hidden';
+    overlay.style.display = 'none';
+    document.body.appendChild(overlay);
+
+    botaoMenu?.addEventListener('click', () => {
+      menu.classList.remove('-translate-x-full');
+      menu.classList.add('translate-x-0');
+      overlay.style.display = 'block';
+    });
+
+    overlay.addEventListener('click', () => {
+      menu.classList.remove('translate-x-0');
+      menu.classList.add('-translate-x-full');
+      overlay.style.display = 'none';
+    });
+  });
+</script>
+
   </body>
 </html>
