@@ -250,7 +250,7 @@ Error generating stack: `+ l.message + `
   "orbisx-sidebar transition-transform duration-300 z-40 " + 
   `${m ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`
 
-      `, children: c.jsxs("div", {
+      , children: c.jsxs("div", {
         className: "flex flex-col h-full", children: [c.jsx("div", { className: "p-6 border-b border-border", children: c.jsxs("div", { className: "flex items-center space-x-3", children: [c.jsx("div", { className: "w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center", children: c.jsx("span", { className: "text-white font-bold text-lg", children: "O" }) }), c.jsxs("div", { children: [c.jsx("h1", { className: "text-xl font-bold text-white", children: "Orbisx" }), c.jsx("p", { className: "text-sm text-gray-400", children: "Sistema de Gestão" })] })] }) }), c.jsx("nav", {
           className: "flex-1 p-4", children: c.jsx("ul", {
             className: "space-y-2", children: Z.map(A => {
