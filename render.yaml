@@ -11,16 +11,3 @@ services:
         value: production
       - key: PORT
         value: 5000
-    
-  - type: web
-    name: orbisx-frontend
-    env: node
-    buildCommand: |
-      cd frontend &&
-      npm install &&
-      npm run build
-    startCommand: cd frontend && npm run preview
-    envVars:
-      - key: NODE_ENV
-        value: production
-
