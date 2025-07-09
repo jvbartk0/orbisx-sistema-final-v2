@@ -1,9 +1,10 @@
-.nav-mobile {
+/* NAVBAR MOBILE */
+
+.mobile-nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 12px 16px;
-  background-color: #6b21a8; /* purple-800 */
+  background-color: #6b21a8; /* roxo */
   color: white;
   font-size: 12px;
   font-weight: 500;
@@ -11,19 +12,31 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
+  padding: 12px 8px;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.nav-mobile a {
+.mobile-nav a {
   color: white;
   text-decoration: none;
-  padding: 4px 6px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
 }
 
-.nav-mobile a:hover {
-  text-decoration: underline;
+.mobile-nav a:hover {
+  background-color: #581c87; /* hover roxo mais escuro */
 }
 
-.nav-placeholder {
+.mobile-nav-space {
   height: 48px;
+}
+
+/* ESCONDER NO DESKTOP */
+@media (min-width: 1024px) {
+  .mobile-nav,
+  .mobile-nav-space {
+    display: none;
+  }
 }
